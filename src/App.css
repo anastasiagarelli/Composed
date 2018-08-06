@@ -8,7 +8,7 @@
 }
 
 .App-header {
-  background-color: #222;
+  background-color: rgb(176, 224, 242);
   height: 150px;
   padding: 20px;
   color: white;
@@ -22,7 +22,28 @@
   font-size: large;
 }
 
+.dot {
+  height: 150px;
+  width: 150px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.tracking-in-expand-fwd{
+  text-align: left;
+  padding-top: 80px;
+  animation:tracking-in-expand-fwd .8s cubic-bezier(.215,.61,.355,1.000) both}
+
+.dot{animation:scale-up-center 20s cubic-bezier(.39,.575,.565,1.000) 1s infinite both}
+/* .out-dot{animation:scale-down-center 8s cubic-bezier(.25,.46,.45,.94) 7s infinite both} */
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+@keyframes tracking-in-expand-fwd{0%{letter-spacing:-.5em;transform:translateZ(-700px);opacity:0}40%{opacity:.6}100%{transform:translateZ(0);opacity:1}}
+
+@keyframes scale-up-center{0%{transform:scale(.5)}20%{transform:scale(1)}50%{transform:scale(1)}100%{transform:scale(.5)}}
+/* @keyframes scale-down-center{0%{transform:scale(1)}100%{transform:scale(.5)}} */

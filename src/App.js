@@ -100,7 +100,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Currently Playing</h2>
+          <h1 className="tracking-in-expand-fwd">Composition</h1>
         </div>
           {
             !this.state.loggedIn ?
@@ -113,14 +113,16 @@ class App extends Component {
             <button type="submit" onClick={() => this.handleOnClick()}>Submit</button>
             </p> :
             <div>
+              <h2>Currently Playing</h2>
               <p>Artist: {this.state.artistName}</p>
               <p>Track: {this.state.trackName}</p>
-              <p>Album: {this.state.albumName}</p>
+              <p>Album: {this.state.albumName}</p><br />
               <p>
                 <button onClick={() => this.handleOnClickPrev()}>Previous</button>
                 <button onClick={() => this.handleOnClickPlay()}>{this.state.playing ? "Pause" : "Play"}</button>
                 <button onClick={() => this.handleOnClickNext()}>Next</button>
               </p>
+              <span className="dot"></span>
             </div>
 
           }

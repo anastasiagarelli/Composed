@@ -1,5 +1,5 @@
 
-Title Pending
+Title: Composition
 Project by Anastasia Garelli
 
 This is an app which utilizes the Spotify Web Playback SDK API and the Web Audio API to create a meditation application. It was built with create-react-app.
