@@ -2,7 +2,7 @@
 Title Pending
 Project by Anastasia Garelli
 
-This is an app which utilizes the Spotify Web Playback SDK API and the Web Audio API to create a meditation application.
+This is an app which utilizes the Spotify Web Playback SDK API and the Web Audio API to create a meditation application. It was built with create-react-app.
 
 Currently:
 - A user can play, pause, skip previous, and skip music using Spotify Connect from another device

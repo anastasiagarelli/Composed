@@ -60,22 +60,39 @@ class App extends Component {
   onStateChanged(state) {
     console.log('STATE:', state)
     if (state !== null) {
-    const currentTrack = state.track_window
-    const position = currentTrack.position
-    const duration = currentTrack.duration
-    const trackName = currentTrack.name;
-    const albumName = currentTrack.album.name;
-    const artistName = currentTrack.artists.map(artist => artist.name).join(", ")
-    const playing = !state.paused;
-    this.setState({
-      position,
-      duration,
-      trackName,
-      albumName,
-      artistName,
-      playing
-    })
+      const {
+        current_track: currentTrack,
+        position,
+        duration,
+      } = state.track_window;
+      // const currentTrack = state.track_window
+      // const position = currentTrack.position
+      // const duration = currentTrack.duration
+      const trackName = currentTrack.name;
+      const albumName = currentTrack.album.name;
+      const artistName = currentTrack.artists.map(artist => artist.name).join(", ")
+      const playing = !state.paused;
+      this.setState({
+        position,
+        duration,
+        trackName,
+        albumName,
+        artistName,
+        playing
+      })
     }
+  }
+
+  handleOnClickPrev() {
+    this.player.previousTrack();
+  }
+
+  handleOnClickPlay() {
+    this.player.togglePlay();
+  }
+
+  handleOnClickNext() {
+    this.player.nextTrack();
   }
 
   render() {
@@ -99,6 +116,11 @@ class App extends Component {
               <p>Artist: {this.state.artistName}</p>
               <p>Track: {this.state.trackName}</p>
               <p>Album: {this.state.albumName}</p>
+              <p>
+                <button onClick={() => this.handleOnClickPrev()}>Previous</button>
+                <button onClick={() => this.handleOnClickPlay()}>{this.state.playing ? "Pause" : "Play"}</button>
+                <button onClick={() => this.handleOnClickNext()}>Next</button>
+              </p>
             </div>
 
           }
@@ -109,37 +131,6 @@ class App extends Component {
 }
 
 export default App;
-
-
-
-// <input  id="audioFileChooser" type="file" onchange="readFile(this.files);">
-
-// <label for="audioFileChooser">Upload an audio file: </label><br><br>
-// <input  id="audioFileChooser" type="file" onchange="readFile(this.files);">
-
-// <script>
-// 	function readFile(files) {
-// 		var fileReader = new FileReader();
-// 			fileReader.readAsArrayBuffer(files[0]);
-// 			fileReader.onload = function(e) {
-// 				playAudioFile(e.target.result);
-// 				console.log(("Filename: '" + files[0].name + "'"), ( "(" + ((Math.floor(files[0].size/1024/1024*100))/100) + " MB)" ));
-// 			}
-// 	}
-// 	function playAudioFile(file) {
-// 		var context = new window.AudioContext();
-// 			context.decodeAudioData(file, function(buffer) {
-// 				var source = context.createBufferSource();
-// 					source.buffer = buffer;
-// 					source.loop = false;
-// 					source.connect(context.destination);
-// 					source.start(0);
-// 			});
-// 	}
-// </script>
-
-
-
 
 
 
