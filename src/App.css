@@ -22,6 +22,14 @@
   font-size: large;
 }
 
+.token-input {
+  margin: 10px;
+}
+
+.btn-secondary {
+  margin: 5px;
+}
+
 .dot {
   height: 150px;
   width: 150px;

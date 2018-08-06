@@ -10,9 +10,9 @@ class App extends Component {
       deviceId: "",
       loggedIn: false,
       error: "",
-      trackName: "Track Name",
-      artistName: "Artist Name",
-      albumName: "Album Name",
+      trackName: "--",
+      artistName: "--",
+      albumName: "--",
       playing: false,
       position: 0,
       duration: 0,
@@ -109,8 +109,8 @@ class App extends Component {
             <a href="https://beta.developer.spotify.com/documentation/web-playback-sdk/quick-start/#authenticating-with-spotify">
             here
             </a>. <br />
-            <input type="text" value={this.state.token} onChange={evt => this.setState({ token: evt.target.value })} />
-            <button type="submit" onClick={() => this.handleOnClick()}>Submit</button>
+            <input className="token-input" type="text" value={this.state.token} onChange={evt => this.setState({ token: evt.target.value })} /><br />
+            <button type="submit" class="btn btn-secondary" onClick={() => this.handleOnClick()}>Submit</button>
             </p> :
             <div>
               <h2>Currently Playing</h2>
@@ -118,9 +118,9 @@ class App extends Component {
               <p>Track: {this.state.trackName}</p>
               <p>Album: {this.state.albumName}</p><br />
               <p>
-                <button onClick={() => this.handleOnClickPrev()}>Previous</button>
-                <button onClick={() => this.handleOnClickPlay()}>{this.state.playing ? "Pause" : "Play"}</button>
-                <button onClick={() => this.handleOnClickNext()}>Next</button>
+                <button type="button" className="btn btn-secondary" onClick={() => this.handleOnClickPrev()}>Previous</button>
+                <button type="button" className="btn btn-secondary" onClick={() => this.handleOnClickPlay()}>{this.state.playing ? "Pause" : "Play"}</button>
+                <button type="button" className="btn btn-secondary" onClick={() => this.handleOnClickNext()}>Next</button>
               </p>
               <span className="dot"></span>
             </div>
