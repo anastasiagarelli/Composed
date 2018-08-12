@@ -1,8 +1,8 @@
 
-Composition  
+Composed
 Project by Anastasia Garelli
 
-This is an app which utilizes the Spotify Web Playback SDK API and the Web Audio API to create a meditation application. It was built with create-react-app.
+Guided breathing and meditation single-page web application that utilizes Spotify's Web Playback SDK and Connect.
 
 Currently:
 - A user can play, pause, skip previous, and skip music using Spotify Connect from another device
